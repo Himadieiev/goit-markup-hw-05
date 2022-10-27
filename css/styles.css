@@ -1,10 +1,10 @@
-/* Основной шрифт и цвет текста, общие секционные стили */
+/* -----------------Основной шрифт и цвет текста, общие секционные стили--------------------- */
 :root {
   --main-text-color: #212121;
   --header-background-color: #FFFFFF;
   --first-background-color: #2F303A;
   --second-background-color: #F5F4FA;
-  --hoverfocus-text-color: #2196F3;
+  --hoverfocus-color: #2196F3;
   --text-color: #FFFFFF;
 }
 
@@ -84,9 +84,9 @@ img {
   color: #757575;
 }
 
-/* Оформление шапки сайта - общая для всех! */
+/* ----------------------Оформление шапки сайта - общая для всех!------------------------ */
 .header {
-  background: var(--header-background-color);
+  background-color: var(--header-background-color);
 }
 
 header {
@@ -146,6 +146,8 @@ header {
   display: block;
   padding-top: 32px;
   padding-bottom: 32px;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .current::after {
@@ -164,10 +166,15 @@ header {
 
 .link-nav:hover,
 .link-nav:focus {
-  color: var(--hoverfocus-text-color);
+  color: var(--hoverfocus-color);
 }
 
 .link-contacts {
+  display: flex;
+  align-items: center;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
@@ -175,16 +182,14 @@ header {
   color: #757575;
   text-decoration: none;
 
-  display: flex;
-  align-items: center;
-  padding-top: 32px;
-  padding-bottom: 32px;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .link-contacts:hover,
 .link-contacts:focus {
-  fill:var(--hoverfocus-text-color);
-  color: var(--hoverfocus-text-color);
+  fill:var(--hoverfocus-color);
+  color: var(--hoverfocus-color);
 }
 
 .current {
@@ -192,42 +197,38 @@ header {
 }
 
 .icon-envelope {
-  fill: currentColor;
-
   margin-right: 10px;
+
+  fill: currentColor;
 }
 
 .icon-smartphone {
-  fill: currentColor;
-
   margin-right: 10px;
+
+  fill: currentColor;
 }
 
 .item-contact:not(:last-child) {
   margin-right: 30px;
 }
 
-.icon-smartphone:hover,
-.icon-smartphone:focus {
-  fill: var(--hoverfocus-text-color);
-}
-
-/*Заказ услуг - главный заголовок*/
+/* -------------------------Заказ услуг - главный заголовок------------------------------- */
 .section-one {
   width: 1600px;
   height: 600px;
-  background: #C4C4C4;
+  text-align: center;
+  padding-top: 200px;
+  padding-bottom: 200px;
+  margin-left: auto;
+  margin-right: auto;
+
+  background-color:#C4C4C4;
   background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4),
       rgba(47, 48, 58, 0.4)),
       url(../images/bg-img.jpg);
   background-repeat: no-repeat;
   background-position: center;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
-  text-align: center;
-  padding-top: 200px;
-  padding-bottom: 200px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 main > .section-one {
@@ -235,21 +236,24 @@ main > .section-one {
 }
 
 .main-title {
-  font-size: 44px;
-  line-height: 1.36;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--text-color);
-
   width: 696px;
   margin-bottom: 30px;
   margin-top: 0;
   margin-right: auto;
   margin-left: auto;
+
+  font-size: 44px;
+  line-height: 1.36;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-color);
 }
 
 .main-button {
-  background: #2196F3;
+  padding: 10px 32px;
+  display: inline-block;
+
+  background-color:#2196F3;
   color: #FFFFFF;
   font-weight: 700;
   font-size: 16px;
@@ -258,17 +262,16 @@ main > .section-one {
   letter-spacing: 0.06em;
   font-family: inherit;
   cursor: pointer;
-
   border: 0;
   border-radius: 4px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  padding: 10px 32px;
-  display: inline-block;
+  
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .main-button:hover,
 .main-button:focus {
-  background: #188CE8;
+  background-color:#188CE8;
 }
 
 .backdrop {
@@ -279,7 +282,7 @@ main > .section-one {
   width: 100%;
   height: 100%;
 
-  background: rgba(0, 0, 0, 0.2);
+  background-color:rgba(0, 0, 0, 0.2);
 }
 
 .backdrop.is-hidden {
@@ -297,10 +300,9 @@ main > .section-one {
   width: 528px;
   height: 581px;
 
-  background: #FFFFFF;
+  background-color:#FFFFFF;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  
 }
 
 .close-button {
@@ -311,7 +313,7 @@ main > .section-one {
   width: 30px;
   height: 30px;
 
-  background: #FFFFFF;
+  background-color:#FFFFFF;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%  ;
   display: flex;
@@ -319,7 +321,7 @@ main > .section-one {
   align-items: center;
 }
 
-/*Особенности студии*/
+/* -------------------------------Особенности студии------------------------------------ */
 .feature {
   display: flex;
 }
@@ -334,13 +336,13 @@ main > .section-one {
 }
 
 .subtitle-two {
+  margin-bottom: 10px;
+  margin-top: 30px;
+
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
   text-transform: uppercase;
-
-  margin-bottom: 10px;
-  margin-top: 30px;
 }
 
 .text-two {
@@ -348,12 +350,8 @@ main > .section-one {
   line-height: 1.71;
 }
 
-/* .icon-antenna, .icon-clock, .icon-diagram, .icon-astronaut {
-  margin: 25px 100px;
-} */
-
 .bg-icon {
-  background: #F5F4FA;
+  background-color:#F5F4FA;
   border-radius: 4px;
   height: 120px;
   display: flex;
@@ -361,7 +359,7 @@ main > .section-one {
   align-items: center;
 }
 
-/*Чем мы занимаемся*/
+/* ------------------------------------Чем мы занимаемся-------------------------------------- */
 .work {
   display: flex;
   margin-top: 50px;
@@ -375,7 +373,7 @@ main > .section-one {
   padding-bottom: 94px;
 }
 
-/* Наша команда */
+/* ---------------------------------------Наша команда---------------------------------------- */
 .team {
   display: flex;
   margin-top: 50px;
@@ -396,17 +394,18 @@ main > .section-one {
 }
 
 .section-four {
-  background: var(--second-background-color);
   padding-bottom: 94px;
+
+  background-color: var(--second-background-color);
 }
 
 .subtitle-four {
+  margin-bottom: 10px;
+
   font-weight: 500;
   font-size: 16px;
   line-height: 1.18;
   text-align: center;
-
-  margin-bottom: 10px;
 }
 
 .text-four {
@@ -416,20 +415,24 @@ main > .section-one {
 }
 
 .link-social {
-  text-decoration: none;
-  display: flex;
   width: 44px;
   height: 44px;
+
+  text-decoration: none;
+  display: flex;
   border-radius: 50%;
   justify-content: center;
   align-items: center;
   outline: 1px solid #FFFFFF;
   fill:#AFB1B8;
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .link-social:hover, .link-social:focus {
   fill:#FFFFFF;
-  background: var(--hoverfocus-text-color);
+  background-color: var(--hoverfocus-color);
 }
 
 .item-social {
@@ -437,15 +440,15 @@ main > .section-one {
 }
 
 .group-social {
-  display: flex;
   width: 206px;
+  display: flex;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 30px;
   justify-content: space-between;
 }
 
-/* Постоянные клиенты */
+/* ----------------------------------Постоянные клиенты-------------------------------------- */
 .section-five {
   padding-bottom: 94px;
 }
@@ -461,29 +464,35 @@ main > .section-one {
   display: flex;
   align-items: center;
   justify-content: center;
+
   border: 1px solid #AFB1B8;
   border-radius: 4px;
   fill:#AFB1B8;
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .link-clients:hover, .link-clients:focus {
-  fill: var(--hoverfocus-text-color);
-  border: 1px solid var(--hoverfocus-text-color);
+  fill: var(--hoverfocus-color);
+  border: 1px solid var(--hoverfocus-color);
 }
 
 .item-clients:not(:last-child) {
   margin-right: 30px;
 }
 
-/* Футер - общий для всех! */
+/* -----------------------------Футер - общий для всех!-------------------------------- */
 .footer {
-  background: var(--first-background-color);
-
   padding-top: 60px;
   padding-bottom: 60px;
+
+  background-color: var(--first-background-color);
 }
 
 .logo-footer {
+  display: block;
+
   font-family: 'Raleway';
   font-weight: 700;
   font-size: 26px;
@@ -491,8 +500,6 @@ main > .section-one {
   letter-spacing: 0.03em;
   color: #FFFFFF;
   text-decoration: none;
-
-  display: block;
 }
 
 address {
@@ -507,6 +514,8 @@ address {
   letter-spacing: 0.03em;
   color: #FFFFFF;
   text-decoration: none;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .item-mail {
@@ -522,6 +531,8 @@ address {
   letter-spacing: 0.03em;
   color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
 .tel {
@@ -532,6 +543,8 @@ address {
   letter-spacing: 0.03em;
   color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .address:hover,
@@ -540,7 +553,7 @@ address {
 .mail:focus,
 .tel:hover,
 .tel:focus {
-  color: var(--hoverfocus-text-color);
+  color: var(--hoverfocus-color);
 }
 
 .address-join {
@@ -549,19 +562,19 @@ address {
 }
 
 .logo-address:not(:last-child) {
-  margin-right: 70px;
   width: 231px;
+  margin-right: 70px;
 }
 
 .text-footer {
+  margin-bottom: 20px;
+
   font-weight: 700;
   font-size: 14px;
   line-height: 16px;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #FFFFFF;
-
-  margin-bottom: 20px;
 }
 
 .social-footer {
@@ -573,19 +586,22 @@ address {
 }
 
 .link-social-footer {
-  text-decoration: none;
   display: flex;
   width: 44px;
   height: 44px;
+
+  text-decoration: none;
   border-radius: 50%;
   justify-content: center;
   align-items: center;
-  background: rgba(255, 255, 255, 0.1);
+  background-color:rgba(255, 255, 255, 0.1);
   fill:#FFFFFF;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .link-social-footer:hover, .link-social-footer:focus {
-  background: var(--hoverfocus-text-color);
+  background-color: var(--hoverfocus-color);
 }
 
 /* -----------------------Страница 2 - Портфолио-------------------------------- */
@@ -610,7 +626,10 @@ address {
 }
 
 .button {
-  background: #F5F4FA;
+  display: inline-block;
+  padding: 6px 22px;
+
+  background-color:#F5F4FA;
   color: #212121;
   font-weight: 500;
   font-size: 16px;
@@ -619,22 +638,23 @@ address {
   letter-spacing: 0.03em;
   font-family: inherit;
   cursor: pointer;
-
   border-radius: 4px;
   border: 0;
-  display: inline-block;
-  padding: 6px 22px;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button:hover,
 .button:focus {
-  background: var(--hoverfocus-text-color);
+  background-color: var(--hoverfocus-color);
   color: #FFFFFF;
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .project-name {
   padding: 20px 24px;
+
   border-left: 1px solid #EEEEEE;
   border-right: 1px solid #EEEEEE;
   border-bottom: 1px solid #EEEEEE;
@@ -643,9 +663,12 @@ address {
 .link-potrfolio {
   position: relative;
 
+  display: block;
+
   color: #212121;
   text-decoration: none;
-  display: block;
+
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .link-potrfolio:hover, .link-potrfolio:focus {
